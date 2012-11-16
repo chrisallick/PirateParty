@@ -44,8 +44,26 @@ displayVideos = function( vids ) {
     for( var i = 0,len = vids.length; i < len; i++ ) {
         $("#videos").append('<div class="video" id="'+vids[i]+'"><img class="thumb" src="http://img.youtube.com/vi/'+vids[i]+'/1.jpg"/><img class="delete" src="/img/delete.png" />');
     }
-    attachClicks();
-    playNextVideo();
+    if( vids.length > 0 ) {
+        attachClicks();
+        playNextVideo();
+    }
+}
+
+deleteVideo = function( vid ) {
+    $.ajax({
+        type: "POST",
+        url: "/deletevid",
+        dataType: "json",
+        data: {
+            "channel": channel,
+            "vid": vid
+        }
+    }).done(function( resp ) {
+        if( resp && resp["result"] == "success" ) {
+            $("#"+vid).remove();
+        }
+    });
 }
 
 attachClicks = function() {
@@ -58,8 +76,12 @@ attachClicks = function() {
     $(".delete").unbind().bind("click", function(event) {
         event.stopPropagation()
 
-        console.log("delete: " + $(this).parent().attr("id") );
+        deleteVideo( $(this).parent().attr("id") );
     });
+
+    if( $(".video").length == 1 ) {
+        playNextVideo();
+    }
 }
 
 switchVideo = function( vid ) {

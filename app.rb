@@ -60,9 +60,9 @@ post '/deletevid' do
   if vid && channel
     $redis.lrem("vids:#{channel}",0,vid)
 
-    { :return => "success" }.to_json
+    { :result => "success" }.to_json
   else
-    { :return => "fail" }.to_json
+    { :result => "fail" }.to_json
   end
 
 end
