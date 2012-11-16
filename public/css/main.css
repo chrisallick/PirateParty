@@ -9,6 +9,9 @@ html, body { width: 600px; }
 #newvid #url {  margin-bottom: 10px; }
 #newvid #submit { width: 524px; }
 
+#letsdothis { text-align: center; margin-bottom: 10px; }
+#letsdothis a { border: 1px solid black; }
+
 p { width: 500px; margin: 0 auto; font: bold 16px Helvetica; }
 
 #video_wrapper { text-align: center; margin-bottom: 20px; }

@@ -38,6 +38,10 @@ $(document).ready(function() {
             displayVideos( resp.vids );
         }
     });
+
+    $("#letsdothis a").click(function(event){
+        event.preventDefault();
+    });
 });
 
 displayVideos = function( vids ) {
