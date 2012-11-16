@@ -93,6 +93,17 @@ playNextVideo = function() {
     }
 }
 
+function onytplayerStateChange(newState) {
+    if( newState == 0 ) {
+        playNextVideo();
+    }
+}
+
+// on error just go to next vid
+function onytplayerError(error) {
+    playNextVideo()
+}
+
 onYouTubePlayerReady = function( playerId ) {
     ytplayer = document.getElementById( "video_container" );
     ytplayer.addEventListener("onStateChange", "onytplayerStateChange");

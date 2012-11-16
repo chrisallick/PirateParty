@@ -1,6 +1,4 @@
-goblin
+Pirate Party!
 ======
 
-note taking with code highlighting
-
-http://goblin.herokuapp.com/
+Come and join the party!
