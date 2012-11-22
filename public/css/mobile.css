@@ -1,24 +1,23 @@
-html, body { width: 100%; height: 100%; }
+html, body { width: 300px; height: 100%; overflow: hidden; }
 
 .round { border-radius: 3px; }
 
-#wrapper { margin-top: 20px; z-index: 1000;}
+#wrapper { margin-top: 20px; }
 
 #newvid { width: 500px; margin: 0 auto; text-align: middle; margin-bottom: 20px; }
 #newvid input { width: 100%; border: 2px solid black; padding: 10px; }
 #newvid #url {  margin-bottom: 10px; }
 #newvid #submit { width: 524px; }
 
-#letsdothis { text-align: center; margin-bottom: 10px; position: relative; z-index: 10001; }
+#letsdothis { text-align: center; margin-bottom: 10px; }
 #letsdothis a { border: 1px solid black; }
 
 p { width: 500px; margin: 0 auto; font: bold 16px Helvetica; }
 
 #video_wrapper { text-align: center; margin-bottom: 20px; }
-#video_container_fs { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 1001; }
 
-#videos { width: 530px; margin: 0 auto; cursor: pointer; z-index: 1002; }
-#videos .video { position: relative; width: 120px; height: 90px; float: left; border: 2px solid white; margin-right: 8px; margin-bottom: 8px; }
+#videos { width: 300px; margin: 0 auto; cursor: pointer; }
+#videos .video { position: relative; width: 240px; height: 180px; float: left; border: 2px solid white; margin-right: 8px; margin-bottom: 8px; }
 #videos .playing { border-color: black; }
-#videos .video .thumb { position: absolute; top: 0px; z-index: 1002; }
+#videos .video .thumb { position: absolute; top: 0px; z-index: 1; width: 240px; height: 180px; }
 #videos .video .delete { cursor: pointer; position: absolute; top: 0px; width: 20px; z-index: 100; right: 0px; padding: 4px; background-color: #FFFFFF; }

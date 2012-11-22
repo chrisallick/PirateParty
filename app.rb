@@ -15,13 +15,20 @@ get '/' do
   redirect '/channel/chrisallick'
 end
 
+get %r{/channel/([\w]+)}, :agent => /iPhone/ do
+  erb :mobile, :locals => {
+    :mobile => true
+  }
+end
+
 get %r{/channel/([\w]+)} do
-  erb :main
+  erb :main, :locals => {
+    :mobile => false
+  }
 end
 
 get '/vids' do
   channel = params[:channel]
-  puts channel
   vids = []
   all = $redis.lrange("vids:#{channel}", 0, $redis.llen("vids:#{channel}"))
   all.each do |vid|
